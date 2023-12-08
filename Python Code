@@ -1,0 +1,32 @@
+import random
+
+def game(ch1, ch2):
+    # If computer chooses snake and player chooses water, computer wins
+    if ch1 == 'snake' and ch2 == 'water':
+        print("Computer wins")
+    # If computer chooses water and player chooses gun, computer wins
+    elif ch1 == 'water' and ch2 == 'gun':
+        print("Computer wins")
+    # If computer chooses gun and player chooses snake, computer wins
+    elif ch1 == 'gun' and ch2 == 'snake':
+        print("Computer wins")
+    # If both choices are the same, the game is a tie
+    elif ch1 == ch2:
+        print("Game is a tie")
+    # Otherwise, the player wins
+    else:
+        print("You win")
+
+print("Enter your choice computer [snake/water/gun]:")
+randNo = random.randint(1, 3)
+if randNo == 1:
+    ch1 = 'snake'
+elif randNo == 2:
+    ch1 = 'water'
+else:
+    ch1 = 'gun'
+
+ch2 = input("Enter your choice [snake/water/gun]:")
+print("Computer chose", ch1)
+print("You chose", ch2)
+game(ch1, ch2)
